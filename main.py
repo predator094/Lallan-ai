@@ -21,7 +21,7 @@ st.set_page_config(
 )
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5)
+llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5,google_api_key=st.secrets["GOOGLE_API_KEY"])
 
 
 # json upload
