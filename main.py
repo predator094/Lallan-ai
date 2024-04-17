@@ -25,23 +25,23 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.5,google_api_key=
 
 
 # json upload
-def write_to_json(data, filename):
-    if os.path.exists(filename):
-        with open(filename, "r") as file:
-            existing_data = json.load(file)
-        # Check if the email already exists in the file
-        if "email" in data:
-            existing_emails = [
-                entry["email"] for entry in existing_data if "email" in entry
-            ]
-            if data["email"] in existing_emails:
-                return
-        existing_data.append(data)
-        with open(filename, "w") as file:
-            json.dump(existing_data, file, indent=4)
-    else:
-        with open(filename, "w") as file:
-            json.dump([data], file, indent=4)
+# def write_to_json(data, filename):
+#     if os.path.exists(filename):
+#         with open(filename, "r") as file:
+#             existing_data = json.load(file)
+#         # Check if the email already exists in the file
+#         if "email" in data:
+#             existing_emails = [
+#                 entry["email"] for entry in existing_data if "email" in entry
+#             ]
+#             if data["email"] in existing_emails:
+#                 return
+#         existing_data.append(data)
+#         with open(filename, "w") as file:
+#             json.dump(existing_data, file, indent=4)
+#     else:
+#         with open(filename, "w") as file:
+#             json.dump([data], file, indent=4)
 
 
 # session states
@@ -66,7 +66,7 @@ with st.form("my_form"):
     email = st.text_input("Email")
     submitted = st.form_submit_button("Submit")
     if submitted and email != "":
-        write_to_json({"email": email}, "emails.json")
+        # write_to_json({"email": email}, "emails.json")
         st.session_state.email = email
         st.session_state.inpu = True
 
@@ -110,14 +110,14 @@ if prompt := st.chat_input(
     with st.chat_message("assistant"):
         a = rag_chain.invoke(prompt)
         st.markdown(a)
-    email_filename = os.path.join(
-        "queries", f"{st.session_state.email.split('@')[0]}.json"
+    # email_filename = os.path.join(
+    #     "queries", f"{st.session_state.email.split('@')[0]}.json"
     )
-    queries_folder = "queries"
-    if not os.path.exists(queries_folder):
-        os.makedirs(queries_folder)
-    write_to_json(
-        {"prompt": prompt, "answer": a},
-        email_filename,
-    )
+    # queries_folder = "queries"
+    # if not os.path.exists(queries_folder):
+    #     os.makedirs(queries_folder)
+    # write_to_json(
+    #     {"prompt": prompt, "answer": a},
+    #     email_filename,
+    # )
     st.session_state.messages.append({"role": "assistant", "content": a})
