@@ -74,11 +74,12 @@ jsonschema-specifications==2023.11.2
 jupyter_client==8.6.0
 jupyter_core==5.5.0
 kiwisolver==1.4.5
-langchain==0.0.340
-langchain-community==0.0.32
-langchain-core==0.1.42
+langchain
+langchain-community
+langchain-core
 langchain-google-genai==1.0.2
 langdetect==1.0.9
+langsmith
 lucknowllm @ git+https://github.com/LucknowAI/Lucknow-LLM.git@afd5bc964a43f368ee5740644a936a1a935c875d
 lxml==5.2.1
 Markdown==3.6
