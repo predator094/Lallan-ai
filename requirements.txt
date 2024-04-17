@@ -1,3 +1,4 @@
 langchian
 langchain-google-genai
 streamlit
+langchain-pinecone
