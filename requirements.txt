@@ -3,3 +3,4 @@ langchain-community
 langchain-google-genai
 streamlit
 langchain-pinecone
+sentence-transformers
