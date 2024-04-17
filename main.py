@@ -112,7 +112,7 @@ if prompt := st.chat_input(
         st.markdown(a)
     # email_filename = os.path.join(
     #     "queries", f"{st.session_state.email.split('@')[0]}.json"
-    )
+    # )
     # queries_folder = "queries"
     # if not os.path.exists(queries_folder):
     #     os.makedirs(queries_folder)
