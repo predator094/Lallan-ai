@@ -80,7 +80,6 @@ langchain-core==0.1.42
 langchain-google-genai==1.0.2
 langdetect==1.0.9
 langsmith==0.1.47
-logging==0.4.9.6
 lucknowllm @ git+https://github.com/LucknowAI/Lucknow-LLM.git@afd5bc964a43f368ee5740644a936a1a935c875d
 lxml==5.2.1
 Markdown==3.6
