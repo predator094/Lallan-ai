@@ -51,7 +51,7 @@ if "embeddings" not in st.session_state:
     st.session_state.embeddings = HuggingFaceEmbeddings()
 if "doc" not in st.session_state:
     st.session_state.doc = PineconeVectorStore(
-        index_name="lai-rag", embedding=st.session_state.embeddings
+        index_name="lai-rag", embedding=st.session_state.embeddings,pinecone_api_key=st.secrets["PINECONE_API_KEY"]
     )
 if "inpu" not in st.session_state:
     st.session_state.inpu = False
